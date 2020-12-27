@@ -16,7 +16,7 @@ WORKDIR /usr/share/zoneinfo
 RUN zip -r -0 /zoneinfo.zip .
 
 FROM scratch
-COPY --from=golang /app/skarn /app/skarn
+COPY --from=golang /app/andesite /app/andesite
 ENV ZONEINFO /zoneinfo.zip
 COPY --from=alpine /zoneinfo.zip /
 COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
